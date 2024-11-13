@@ -1,6 +1,9 @@
 package repository
 
-import "github.com/jmoiron/sqlx"
+import (
+	"fmt"
+	"github.com/jmoiron/sqlx"
+)
 
 type Config struct {
 	Host     string
@@ -21,6 +24,6 @@ func NewPostgresDB(cfg Config) (*sqlx.DB, error) {
 	if err != nil {
 		return nil, err
 	}
-
+	
 	return db, nil
 }
