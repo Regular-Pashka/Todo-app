@@ -7,9 +7,9 @@ import (
 
 type err struct {
 	Message string `json"message"`
-}
+}	
 
-func newErrorResponse(c *gin.Context, statusCode int, message int) {
+func newErrorResponse(c *gin.Context, statusCode int, message string) {
 	logrus.Error(message)
-	c.AbortWithStatusJSON(statusCode, error{message})
+	c.AbortWithStatusJSON(statusCode, err{Message: message})
 }
