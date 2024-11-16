@@ -1,6 +1,6 @@
 CREATE TABLE users
 (
-    id serial not null unique,
+    id serial not null unique, --здесь(как и везде после) вместо not null unique можно было написать primary key (Это своего рода алиас к нот налл юник)
     name varchar(255) not null,
     username varchar(255) not null unique,
     password_hash varchar(255) not null
