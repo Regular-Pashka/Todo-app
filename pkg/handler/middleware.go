@@ -16,6 +16,7 @@ func (h *Handler) userIdentity(c *gin.Context) {
 	header := c.GetHeader(authorizationHeader)
 	if header == "" {
 		newErrorResponse(c, http.StatusUnauthorized, "empty auth header")
+		return
 	}
 
 	headerParts := strings.Split(header, " ")
