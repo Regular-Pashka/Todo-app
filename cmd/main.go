@@ -49,6 +49,8 @@ func main() {
 		}
 	}()
 
+	logrus.Print("TodoApp Started")
+	
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, syscall.SIGTERM, syscall.SIGINT)
 	<- quit
@@ -62,6 +64,7 @@ func main() {
 	if err := db.Close(); err != nil {
 		logrus.Errorf("error occured on db connection close: %s", err.Error())
 	}
+
 }
 
 func InitConfig() error {
